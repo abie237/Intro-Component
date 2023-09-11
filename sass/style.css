@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&family=Lexend+Deca&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lexend Deca", sans-serif;
+  font-family: "Open Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  padding: 5% 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  min-height: 100vh;
+  background-image: url("/images/bg-intro-desktop.png");
+  background-color: hsl(0, 100%, 74%);
+  background-size: cover;
+}
+
+main {
+  max-width: 1500px;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.left {
+  padding: 3%;
+  color: white;
+  width: 50%;
+}
+.left h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 40px;
+  margin-bottom: 25px;
+}
+.left p {
+  opacity: 0.9;
+}
+
+.right {
+  width: 50%;
+  padding: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.right .trial {
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0px 3px 3px rgba(128, 128, 128, 0.668);
+  width: 85%;
+  padding: 12px;
+  font-size: 14px;
+  color: white;
+  background-color: hsl(248, 32%, 49%);
+  margin-bottom: 25px;
+}
+.right .trial span {
+  font-weight: bold;
+}
+.right form {
+  width: 85%;
+  background-color: #fff;
+  padding: 5% 3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.3rem;
+  border-radius: 7px;
+  box-shadow: 0px 3px 3px rgba(128, 128, 128, 0.668);
+}
+.right form div {
+  width: 100%;
+}
+.right form div .errMsg {
+  color: red;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  font-size: 10px;
+  display: none;
+  transition: 0.3s;
+}
+.right form input {
+  border-radius: 3px;
+  border: 0.7px solid hsl(249, 10%, 26%);
+  width: 100%;
+  padding: 10px;
+}
+.right form button {
+  color: white;
+  background-color: hsl(154, 59%, 51%);
+  text-transform: uppercase;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  box-shadow: 0px 3px 2px hsl(154, 59%, 51%);
+  letter-spacing: 1.2px;
+}
+.right form p {
+  font-size: 10px;
+  color: hsl(249, 10%, 26%);
+}
+.right form p a {
+  font-weight: bold !important;
+  color: hsl(0, 100%, 74%) !important;
+  text-decoration: none;
+}
+
+.error {
+  border: 5px solid green;
+  outline: 1px solid red;
+}
+
+@media screen and (min-width: 2400px) {
+  .left h1 {
+    font-size: 50px;
+  }
+  .left p {
+    font-size: 25px;
+  }
+  .trial {
+    font-size: 19px;
+  }
+  .left form input::-moz-placeholder {
+    font-size: 16px;
+  }
+  .left form input::placeholder {
+    font-size: 16px;
+  }
+  .left form button {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 900px) {
+  main {
+    max-width: 895px;
+    width: 100%;
+    padding: 5%;
+    flex-direction: column;
+  }
+  .left {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .right {
+    width: 100%;
+  }
+  .right .trial, .right form {
+    width: 100%;
+  }
+  .right form p {
+    text-align: center;
+    font-size: 8px;
+  }
+}/*# sourceMappingURL=style.css.map */
