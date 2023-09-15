@@ -38,25 +38,31 @@ form.addEventListener('submit', e=>{
     }
    
      /*email*/
-        // const emailREgex = \A[A-Z0-9+_.-]+@[A-Z0-9.-]+\Z ;     /*password*/
-        // if(!test.emailREgex(emailValue)){
-        //   email.classList.add('error');
-        //   email.nextElementSibling.style.display = "none";
-        // }
-        // else{
-        //   email.classList.remove("error");
-        //   email.nextElementSibling.style.display = "none";
-        // }
-
-        /*pasword */
-        let passValue = password.value;
-        console.log(passValue);
-        if(passValue.length < 8){
-          password.nextElementSibling.display = "block";
-        }else{
-          password.nextElementSibling.display = "none";
+     let emailValue = email.value.trim();
+        const emailREgex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/ ;     /*password*/
+        if(!emailREgex.test(emailValue)){
+         console.log("false");
+          email.classList.add('error');
+          email.nextElementSibling.style.display = "block";
+        }
+        else{
+         console.log("True");
+          email.classList.remove("error");
+          email.nextElementSibling.style.display = "none";
         }
 
+        // Password regex
+         const passwordRegex = /^(?=.{8,})$/;
+
+         // Check if password matches the regex
+         let passValue = password.value;
+         if (passwordRegex.test(passValue)) {
+           password.classList.remove("error");
+           password.nextElementSibling.style.display = "none";
+         } else {
+            password.classList.add("error");
+            password.nextElementSibling.style.display = "block";
+         }
 })
     
      
