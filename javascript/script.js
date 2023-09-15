@@ -5,33 +5,58 @@ let email = document.querySelector('.email');
 let password = document.querySelector('.password');
 let submitBtn = document.querySelector('button')
 
-let errMsg = document.querySelector('.errMsg');
+let errMsg = document.querySelectorAll('.errMsg');
 console.log(errMsg);
 
-function check_regex(text, input_field) {
-    const regex = /^[a-z ,.'-]+$/i;
-    if (!regex.test(text)) {
-      input_field.classList.add("error");
-      errMsg.style.display = "block";
-      return false;
-    } else {
-      input_field.classList.remove("error");
-      errMsg.style.display = "none";
-      return true;
-    }
-  }
+
 
 form.addEventListener('submit', e=>{
-    e.preventDefault();
-    let fnameValue = fname.value.trim();
-    let lnameValue = lname.value.trim();
-    let emailValue = email.value.trim();
-    /*-----------------------------------------*/
-    check_regex(fnameValue,fname);
-    check_regex(lnameValue,lname);
+  e.preventDefault();
+
+  let fnameValue = fname.value.trim();
+  let lnameValue = lname.value.trim();
+  
+    const nameRegex = /^[a-z ,.'-]+$/i ;
+
+    /*Checking for the validity of inputs */
+
+    /*names*/
+    if (!nameRegex.test(fnameValue)){
+       fname.classList.add('error');
+       fname.nextElementSibling.style.display = "block";
+       }else{
+       fname.classList.remove('error');
+       fname.nextElementSibling.style.display = "none";
+    }
+
+    if (!nameRegex.test(lnameValue)){
+       lname.classList.add('error');
+       lname.nextElementSibling.style.display = "block";
+    }else{
+       lname.classList.remove('error');
+       lname.nextElementSibling.style.display = "none";
+    }
+   
+     /*email*/
+        // const emailREgex = \A[A-Z0-9+_.-]+@[A-Z0-9.-]+\Z ;     /*password*/
+        // if(!test.emailREgex(emailValue)){
+        //   email.classList.add('error');
+        //   email.nextElementSibling.style.display = "none";
+        // }
+        // else{
+        //   email.classList.remove("error");
+        //   email.nextElementSibling.style.display = "none";
+        // }
+
+        /*pasword */
+        let passValue = password.value;
+        console.log(passValue);
+        if(passValue.length < 8){
+          password.nextElementSibling.display = "block";
+        }else{
+          password.nextElementSibling.display = "none";
+        }
 
 })
-
-
     
-  
+     
